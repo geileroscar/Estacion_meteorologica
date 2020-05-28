@@ -1,0 +1,7 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/gauge.min.js": "/js/gauge.min.js",
+    "/js/iot-mqtt.js": "/js/iot-mqtt.js",
+    "/js/mqttws31.js": "/js/mqttws31.js"
+}
