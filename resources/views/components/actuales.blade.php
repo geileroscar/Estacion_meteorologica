@@ -126,7 +126,11 @@
                     <canvas id="canvas-presion-atmoferica"
                             data-type="radial-gauge"
                             data-width="250"
-                            data-height="250">
+                            data-height="250"
+                            data-min-value="900"
+                            data-max-value="1500"
+                            data-major-ticks="900,1000,1100,1200,1300,1400,1500"
+                            data-minor-ticks="2">
                     </canvas>
                 </div>
             </div>

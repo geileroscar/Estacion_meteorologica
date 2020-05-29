@@ -11,6 +11,7 @@
                 <th>Humedad</th>
                 <th>Precipitación</th>
                 <th>Calidad del aire</th>
+                <th>Fecha</th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +25,7 @@
                 <th>Humedad</th>
                 <th>Precipitación</th>
                 <th>Calidad del aire</th>
+                <th>Fecha</th>
             </tr>
             </tfoot>
         </table>
@@ -54,7 +56,8 @@
                                 "<td>" + sensores.presion_atmoferica + "</td>" +
                                 "<td>" + sensores.humedad + "</td>" +
                                 "<td>" + sensores.precipitacion + "</td>" +
-                                "<td>" + sensores.calidad_aire + "</td></tr>";
+                                "<td>" + sensores.calidad_aire + "</td>"+
+                                "<td>" + sensores.created_at + "</td></tr>";
                         }
 
                         $("#example").append(cadena);
@@ -102,14 +105,11 @@
 
                     $(".buttons-html5").addClass("btn-raised mr-1");
                     table.responsive.recalc();
-
                 });
-
             $('#table').DataTable().on("draw", function () {
                 console.log(table)
                 responsive();
             })
         });
-
     </script>
 </div>

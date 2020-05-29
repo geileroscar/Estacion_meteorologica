@@ -75,6 +75,10 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
+                        <li class="nav-item {{ Request::is('about') ? 'active' : null }} ">
+                            <a class="nav-link text-white {{ Request::is('about') ? 'font-weight-bold' : null }} "
+                               href="{{ url('/about') }}">Acerca de</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
@@ -83,6 +87,7 @@
                                 <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
+
                     @else
                         <li class="nav-item {{ Request::is('home') ? 'active' : null }}">
                             <a class="nav-link text-white {{ Request::is('home') ? 'font-weight-bold ' : null }} "
@@ -116,15 +121,14 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <main class="py-4" style="min-height: 80vh">
         @yield('content')
     </main>
     <footer class="container">
         <hr>
-        <p>© Company 2017-2020</p>
+        <p>© Universidad Popular del Cesar - Ingeniería Electronica 2020</p>
     </footer>
 </div>
-
 </body>
 
 </html>

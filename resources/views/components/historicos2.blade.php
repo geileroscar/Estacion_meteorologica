@@ -386,8 +386,7 @@
                 .catch(e => {
                     console.log("error de conexion")
                 });
-
-
         });
     </script>
 </div>
+
