@@ -299,12 +299,12 @@
                             data-max-value="400"
                             data-major-ticks="0,50,100,150,200,250,300,350,400"
                             data-highlights='[
-                                { "from": 0, "to": 50, "color": "green" },
-                                { "from": 51, "to": 100, "color": "yellow" },
-                                { "from": 101, "to": 150, "color": "orange" },
-                                { "from": 151, "to": 200, "color": "red" },
-                                { "from": 201, "to": 300, "color": "purple" },
-                                { "from": 301, "to": 400, "color": "brown" }
+                                { "from": 0, "to": 50, "color": "#4CAF50" },
+                                { "from": 51, "to": 100, "color": "#FFEB3B" },
+                                { "from": 101, "to": 150, "color": "#FF9800" },
+                                { "from": 151, "to": 200, "color": "#F44336" },
+                                { "from": 201, "to": 300, "color": "#9C27B0" },
+                                { "from": 301, "to": 400, "color": "#795548" }
                             ]'
                             data-minor-ticks="10"
                             data-stroke-ticks="true"
