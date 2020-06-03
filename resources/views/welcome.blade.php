@@ -12,7 +12,6 @@
         opacity: .9;
 
     }
-
     #app>main {
         padding-bottom: 0 !important;
         padding-top: 0 !important;
