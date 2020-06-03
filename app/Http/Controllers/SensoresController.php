@@ -47,6 +47,7 @@ class SensoresController extends Controller
         $sensor->presion_atmoferica = $request->PresionAtmoferica;
         $sensor->humedad = $request->Humedad;
         $sensor->precipitacion = $request->Precipitacion;
+        $sensor->direccion_viento= $request->DireccionViento;
         $sensor->calidad_aire = $request->CalidadAire;
         $sensor->save();
 

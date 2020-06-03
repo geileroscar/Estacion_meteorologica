@@ -11,26 +11,37 @@
             <div id="VelocidadViento"></div>
         </figure>
     </div>
+
     <div class="card mb-5">
         <figure class="highcharts-figure">
             <div id="Radiacion"></div>
         </figure>
     </div>
+
     <div class="card mb-5">
         <figure class="highcharts-figure">
             <div id="PresionAtmoferica"></div>
         </figure>
     </div>
+
     <div class="card mb-5">
         <figure class="highcharts-figure">
             <div id="Humedad"></div>
         </figure>
     </div>
+
     <div class="card mb-5">
         <figure class="highcharts-figure">
             <div id="Precipitacion"></div>
         </figure>
     </div>
+
+    <div class="card mb-5">
+        <figure class="highcharts-figure">
+            <div id="DireccionViento"></div>
+        </figure>
+    </div>
+
     <div class="card mb-5">
         <figure class="highcharts-figure">
             <div id="CalidadAire"></div>

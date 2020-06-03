@@ -29,7 +29,7 @@ function onConnect() {
     client.subscribe("IoT/Temperatura");
     client.subscribe("IoT/VelocidadViento");
     client.subscribe("IoT/Radiacion");
-    client.subscribe("IoT/PresionAtmoferica");
+    client.subscribe("IoT/PresionAtmosferica");
     client.subscribe("IoT/Humedad");
     client.subscribe("IoT/DireccionViento");
     client.subscribe("IoT/Precipitacion");
@@ -70,7 +70,7 @@ function onMessageArrived(message) {
             sensores.Radiacion = valor;
             console.log(message.payloadString);
             break;
-        case "IoT/PresionAtmoferica":
+        case "IoT/PresionAtmosferica":
             var valor = parseFloat(message.payloadString);
             var gaugeElement = document.getElementById('canvas-presion-atmoferica');
             gaugeElement.setAttribute('data-value', valor);
@@ -122,7 +122,7 @@ function guardar() {
             DireccionViento: '',
             CalidadAire: ''
         };
-        
+
         axios.post('/sensores', sensoresNuevo)
             .then(response => {
                 // Obtenemos los datos

@@ -10,6 +10,7 @@
                 <th>Presión atmosférica</th>
                 <th>Humedad</th>
                 <th>Precipitación</th>
+                <th>Dirección del viento</th>
                 <th>Calidad del aire</th>
                 <th>Fecha</th>
             </tr>
@@ -24,6 +25,7 @@
                 <th>Presión atmosférica</th>
                 <th>Humedad</th>
                 <th>Precipitación</th>
+                <th>Dirección del viento</th>
                 <th>Calidad del aire</th>
                 <th>Fecha</th>
             </tr>
@@ -56,7 +58,8 @@
                                 "<td>" + sensores.presion_atmoferica + "</td>" +
                                 "<td>" + sensores.humedad + "</td>" +
                                 "<td>" + sensores.precipitacion + "</td>" +
-                                "<td>" + sensores.calidad_aire + "</td>"+
+                                "<td>" + direccionDelViento(sensores.direccion_viento) + "</td>" +
+                                "<td>" + sensores.calidad_aire + "</td>" +
                                 "<td>" + sensores.created_at + "</td></tr>";
                         }
 
@@ -111,5 +114,27 @@
                 responsive();
             })
         });
+
+        function direccionDelViento(direccion_viento) {
+            if (direccion_viento < 40) {
+                return "N";
+            } else if (direccion_viento < 80) {
+                return "NE";
+            } else if (direccion_viento < 120) {
+                return "E";
+            } else if (direccion_viento < 160) {
+                return "SE"
+            } else if (direccion_viento < 200) {
+                return "SE"
+            } else if (direccion_viento < 240) {
+                return "S"
+            } else if (direccion_viento < 280) {
+                return "SW"
+            } else if (direccion_viento < 320) {
+                return "W"
+            } else {
+                return "NW"
+            }
+        }
     </script>
 </div>
