@@ -21,6 +21,7 @@ class CreateSensorsTable extends Migration
             $table->string('presion_atmoferica');
             $table->string('humedad');
             $table->string('precipitacion');
+            $table->string('direccion_viento');
             $table->string('calidad_aire');
             $table->timestamps();
         });

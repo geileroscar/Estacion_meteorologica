@@ -8,10 +8,11 @@
                     Temperatura
                 </div>
                 <div class="card-body text-center">
+
                     <canvas id="canvas-temperatura"
                             data-type="linear-gauge"
                             data-width="120"
-                            data-height="350"
+                            data-height="250"
                             data-border-radius="20"
                             data-units="°C"
                             data-min-value="-60"
@@ -48,15 +49,15 @@
                     <canvas
                         id="canvas-velocidad-viento"
                         data-type="radial-gauge"
-                        data-height="350"
-                        data-width="350"
+                        data-width="250"
+                        data-height="250"
                         data-units="Km/h"
                         data-title="false"
                         data-value="0"
                         data-min-value="0"
                         data-max-value="220"
                         data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
-                        data-minor-ticks="2"
+                        data-minor-ticks="0"
                         data-stroke-ticks="false" data-highlights='[
                                                         { "from": 0, "to": 50, "color": "rgba(0,255,0,.15)" },
                                                         { "from": 50, "to": 100, "color": "rgba(255,255,0,.15)" },
@@ -72,7 +73,6 @@
                         data-color-needle-end="rgba(255, 160, 122, .9)"
                         data-value-box="true"
                         data-animation-rule="bounce"
-                        data-animation-duration="500"
                         data-font-value="Led"
                         data-animated-value="true">
 
@@ -91,7 +91,7 @@
                     <canvas id="canvas-radiacion"
                             data-type="linear-gauge"
                             data-width="120"
-                            data-height="350"
+                            data-height="250"
                             data-border-radius="20"
                             data-units="C/Kg"
                             data-min-value="0"
@@ -221,6 +221,59 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card">
+                <div class="card-header font-weight-bold h4">
+                    Dirección de viento
+                </div>
+                <div class="card-body text-center">
+                    <canvas id="canvas-direccion-viento"
+                            data-type="radial-gauge"
+                            data-width="250"
+                            data-height="250"
+                            data-min-value="0"
+                            data-max-value="360"
+                            data-major-ticks="N,NE,E,SE,S,SW,W,NW,N"
+                            data-minor-ticks="22"
+                            data-ticks-angle="360"
+                            data-start-angle="180"
+                            data-stroke-ticks="false"
+                            data-highlights="false"
+                            data-color-plate="#33a"
+                            data-color-major-ticks="#f5f5f5"
+                            data-color-minor-ticks="#ddd"
+                            data-color-numbers="#ccc"
+                            data-color-needle="rgba(240, 128, 128, 1)"
+                            data-color-needle-end="rgba(255, 160, 122, .9)"
+                            data-value-box="false"
+                            data-value-text-shadow="false"
+                            data-color-circle-inner="#fff"
+                            data-color-needle-circle-outer="#ccc"
+                            data-needle-circle-size="15"
+                            data-needle-circle-outer="false"
+                            data-animation-rule="linear"
+                            data-needle-type="line"
+                            data-needle-start="75"
+                            data-needle-end="99"
+                            data-needle-width="3"
+                            data-borders="true"
+                            data-border-inner-width="0"
+                            data-border-middle-width="0"
+                            data-border-outer-width="10"
+                            data-color-border-outer="#ccc"
+                            data-color-border-outer-end="#ccc"
+                            data-color-needle-shadow-down="#222"
+                            data-border-shadow-width="0"
+                            data-animation-target="plate"
+                            data-units="ᵍ"
+                            data-title="DIRECTION"
+                            data-font-title-size="19"
+                            data-color-title="#f5f5f5"
+                            data-animation-duration="1500"
+                    ></canvas>
+                </div>
+            </div>
+        </div>
         <div class="col-12 mb-5">
             <div class="card">
                 <div class="card-header font-weight-bold h4">

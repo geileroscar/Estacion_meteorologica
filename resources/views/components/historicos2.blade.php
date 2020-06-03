@@ -44,13 +44,12 @@
             var presionAtmoferica = [];
             var humedad = [];
             var precipitacion = [];
+            var direccionViento = [];
             var calidadAire = [];
             axios.get('/sensores')
                 .then(response => {
                     // Obtenemos los datos
                     if (response.status === 200) {
-
-                        console.log("response", response);
                         for (let i = 0; i < response.data.length; i++) {
                             var sensores = response.data[i];
                             console.log("este es un sensor", sensores);
@@ -60,17 +59,11 @@
                             presionAtmoferica.push(parseFloat(sensores.presion_atmoferica));
                             humedad.push(parseFloat(sensores.humedad));
                             precipitacion.push(parseFloat(sensores.precipitacion));
+                            direccionViento.push(parseFloat(sensores.direccion_viento));
                             calidadAire.push(parseFloat(sensores.calidad_aire));
 
                         }
-                        console.log("Datos a graficar",
-                            temperatura
-                            , velocidadViento
-                            , radiacion
-                            , presionAtmoferica
-                            , humedad
-                            , precipitacion
-                            , calidadAire);
+
                         Highcharts.chart('temperatura', {
                             title: {
                                 text: 'Gráfica de la temperatura'
@@ -247,6 +240,7 @@
                             }
 
                         });
+
                         Highcharts.chart('Humedad', {
                             title: {
                                 text: 'Gráfica de la Humedad'
@@ -292,6 +286,7 @@
                             }
 
                         });
+
                         Highcharts.chart('Precipitacion', {
                             title: {
                                 text: 'Gráfica de la Precipitación'
@@ -337,6 +332,53 @@
                             }
 
                         });
+
+                        Highcharts.chart('DireccionViento', {
+                            title: {
+                                text: 'Gráfica de la Direccion del Viento'
+                            },
+
+                            subtitle: {
+                                text: 'Esta es la Direccion del Viento registrada'
+                            },
+
+
+                            legend: {
+                                layout: 'vertical',
+                                align: 'right',
+                                verticalAlign: 'middle'
+                            },
+
+                            plotOptions: {
+                                series: {
+                                    label: {
+                                        connectorAllowed: false
+                                    },
+                                }
+                            },
+
+                            series: [{
+                                name: 'Dirección del Viento',
+                                data: direccionViento
+                            }],
+
+                            responsive: {
+                                rules: [{
+                                    condition: {
+                                        maxWidth: 500
+                                    },
+                                    chartOptions: {
+                                        legend: {
+                                            layout: 'horizontal',
+                                            align: 'center',
+                                            verticalAlign: 'bottom'
+                                        }
+                                    }
+                                }]
+                            }
+
+                        });
+
                         Highcharts.chart('CalidadAire', {
                             title: {
                                 text: 'Gráfica de la Calidad del Aire'

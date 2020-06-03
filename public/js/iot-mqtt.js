@@ -9,6 +9,7 @@ var sensores = {
     PresionAtmoferica: '',
     Humedad: '',
     Precipitacion: '',
+    DireccionViento: '',
     CalidadAire: '',
 }
 
@@ -30,6 +31,7 @@ function onConnect() {
     client.subscribe("IoT/Radiacion");
     client.subscribe("IoT/PresionAtmoferica");
     client.subscribe("IoT/Humedad");
+    client.subscribe("IoT/DireccionViento");
     client.subscribe("IoT/Precipitacion");
     client.subscribe("IoT/CalidadAire");
 } // called when the client loses its connection
@@ -45,7 +47,6 @@ function onConnectionLost(responseObject) {
 
 function onMessageArrived(message) {
     console.log(message.destinationName + ": " + message.payloadString);
-
 
     switch (message.destinationName) {
         case "IoT/Temperatura":
@@ -90,6 +91,13 @@ function onMessageArrived(message) {
             sensores.Precipitacion = valor;
             console.log(message.payloadString);
             break;
+        case "IoT/DireccionViento":
+            var valor = parseFloat(message.payloadString);
+            var gaugeElement = document.getElementById('canvas-direccion-viento');
+            gaugeElement.setAttribute('data-value', valor);
+            sensores.DireccionViento = valor;
+            console.log(message.payloadString);
+            break;
         case "IoT/CalidadAire":
             var valor = parseFloat(message.payloadString);
             var gaugeElement = document.getElementById('canvas-calidad-aire');
@@ -102,7 +110,7 @@ function onMessageArrived(message) {
 
 function guardar() {
     //console.log(sensores);
-    if (sensores.Temperatura !== '' && sensores.VelocidadViento !== '' && sensores.Radiacion !== '' && sensores.PresionAtmoferica !== '' && sensores.Humedad !== '' && sensores.Precipitacion !== '' && sensores.CalidadAire !== '') {
+    if (sensores.Temperatura !== '' && sensores.VelocidadViento !== '' && sensores.Radiacion !== '' && sensores.PresionAtmoferica !== '' && sensores.Humedad !== '' && sensores.Precipitacion !== '' && sensores.DireccionViento !== '' && sensores.CalidadAire !== '') {
         const sensoresNuevo = sensores;
         sensores = {
             Temperatura: '',
@@ -111,9 +119,10 @@ function guardar() {
             PresionAtmoferica: '',
             Humedad: '',
             Precipitacion: '',
+            DireccionViento: '',
             CalidadAire: ''
         };
-
+        
         axios.post('/sensores', sensoresNuevo)
             .then(response => {
                 // Obtenemos los datos
@@ -121,10 +130,14 @@ function guardar() {
             })
             .catch(e => {
                 // Capturamos los errores
+                console.log(e)
             })
     } else {
         console.log('Campos vacíos');
     }
 }
+
+
+
 
 
